@@ -3,10 +3,16 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("dev.petuska.npm.publish") version "3.0.1"
 }
 
 kotlin {
     android()
+
+    js(IR) {
+        binaries.library()
+        nodejs()
+    }
 
     val xcf = XCFramework()
     listOf(
@@ -27,6 +33,7 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
+        val jsMain by getting
         val androidMain by getting
         val androidTest by getting
         val iosX64Main by getting
