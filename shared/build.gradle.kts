@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("dev.petuska.npm.publish") version "3.0.1"
+    id("dev.petuska.npm.publish") version "3.0.2"
 }
 
 kotlin {
